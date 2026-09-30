@@ -1,0 +1,354 @@
+class Task1
+{
+    public int sumLastNums(int x)
+    {
+        return x % 10 + x / 10 % 10;
+    }
+}
+
+class Task2
+{
+    public bool isPositive(int x)
+    {
+        return x > 0;
+    }
+}
+
+class Task3
+{
+    public bool isUpperCase(char x)
+    {
+        return x >= 'A' && x <= 'Z';
+    }
+}
+
+class Task4
+{
+    public bool isDivisor(int a, int b)
+    {
+        if (a != 0 && b % a == 0)
+        {
+            return true;
+        }
+        if (b != 0 && a % b == 0)
+        {
+            return true;
+        }
+        return false;
+    }
+}
+
+class Task5
+{
+    public int lastNumSum(int a, int b)
+    {
+        return a % 10 + b % 10;
+    }
+}
+
+class Task6
+{
+    public double safeDiv(int x, int y)
+    {
+        if (y == 0)
+        {
+            return 0;
+        }
+        return (double)x / y;
+    }
+}
+
+class Task7
+{
+    public string makeDecision(int x, int y)
+    {
+        if (x < y)
+        {
+            return $"{x} < {y}";
+        }
+        if (x > y)
+        {
+            return $"{x} > {y}";
+        }
+        return $"{x} == {y}";
+    }
+}
+
+class Task8
+{
+    public bool sum3(int x, int y, int z)
+    {
+        return x + y == z || x + z == y || y + z == x;
+    }
+}
+
+class Task9
+{
+    public string age(int x)
+    {
+        int lastTwo = x % 100;
+        int lastOne = x % 10;
+
+        if (lastTwo >= 11 && lastTwo <= 14)
+        {
+            return $"{x} лет";
+        }
+        if (lastOne == 1)
+        {
+            return $"{x} год";
+        }
+        if (lastOne >= 2 && lastOne <= 4)
+        {
+            return $"{x} года";
+        }
+        return $"{x} лет";
+    }
+}
+
+class Task10
+{
+    public void printDays(string x)
+    {
+        int firstDay;
+        switch (x)
+        {
+            case "понедельник":
+                firstDay = 1;
+                break;
+            case "вторник":
+                firstDay = 2;
+                break;
+            case "среда":
+                firstDay = 3;
+                break;
+            case "четверг":
+                firstDay = 4;
+                break;
+            case "пятница":
+                firstDay = 5;
+                break;
+            case "суббота":
+                firstDay = 6;
+                break;
+            case "воскресенье":
+                firstDay = 7;
+                break;
+            default:
+                Console.WriteLine("это не день недели");
+                return;
+        }
+
+        for (int i = firstDay; i <= 7; i++)
+        {
+            switch (i)
+            {
+                case 1:
+                    Console.WriteLine("понедельник");
+                    break;
+                case 2:
+                    Console.WriteLine("вторник");
+                    break;
+                case 3:
+                    Console.WriteLine("среда");
+                    break;
+                case 4:
+                    Console.WriteLine("четверг");
+                    break;
+                case 5:
+                    Console.WriteLine("пятница");
+                    break;
+                case 6:
+                    Console.WriteLine("суббота");
+                    break;
+                case 7:
+                    Console.WriteLine("воскресенье");
+                    break;
+            }
+        }
+    }
+}
+
+class Task11
+{
+    public string reverseListNums(int x)
+    {
+        string result = "";
+        for (int i = x; i >= 0; i--)
+        {
+            if (i < x)
+            {
+                result += " ";
+            }
+            result += i;
+        }
+        return result;
+    }
+}
+
+class Task12
+{
+    public int pow(int x, int y)
+    {
+        int result = 1;
+        for (int i = 0; i < y; i++)
+        {
+            result *= x;
+        }
+        return result;
+    }
+}
+
+class Task13
+{
+    public bool equalNum(int x)
+    {
+        int lastDigit = x % 10;
+        while (x != 0)
+        {
+            if (x % 10 != lastDigit)
+            {
+                return false;
+            }
+            x /= 10;
+        }
+        return true;
+    }
+}
+
+class Task14
+{
+    public void leftTriangle(int x)
+    {
+        for (int row = 1; row <= x; row++)
+        {
+            for (int column = 1; column <= row; column++)
+            {
+                Console.Write("*");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+
+class Task15
+{
+    public void guessGame()
+    {
+        Random random = new Random();
+        int hidden = random.Next(0, 10);
+        int attempts = 0;
+
+        while (true)
+        {
+            Console.Write("Введите число от 0 до 9: ");
+            string input = Console.ReadLine();
+            if (!int.TryParse(input, out int answer)
+                || answer < 0 || answer > 9)
+            {
+                Console.WriteLine(
+                    "Введите целое число от 0 до 9.");
+                continue;
+            }
+            attempts++;
+            if (answer == hidden)
+            {
+                Console.WriteLine("Вы угадали!");
+                Console.Write("Количество попыток: ");
+                Console.WriteLine(attempts);
+                return;
+            }
+            Console.WriteLine("Вы не угадали.");
+        }
+    }
+}
+
+class Task16
+{
+    public int findLast(int[] arr, int x)
+    {
+        for (int i = arr.Length - 1; i >= 0; i--)
+        {
+            if (arr[i] == x)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+}
+
+class Task17
+{
+    public int[] add(int[] arr, int x, int pos)
+    {
+        int[] result = new int[arr.Length + 1];
+        for (int i = 0; i < pos; i++)
+        {
+            result[i] = arr[i];
+        }
+        result[pos] = x;
+        for (int i = pos; i < arr.Length; i++)
+        {
+            result[i + 1] = arr[i];
+        }
+        return result;
+    }
+}
+
+class Task18
+{
+    public void reverse(int[] arr)
+    {
+        for (int i = 0; i < arr.Length / 2; i++)
+        {
+            int other = arr.Length - 1 - i;
+            int temp = arr[i];
+            arr[i] = arr[other];
+            arr[other] = temp;
+        }
+    }
+}
+
+class Task19
+{
+    public int[] concat(int[] arr1, int[] arr2)
+    {
+        int[] result = new int[arr1.Length + arr2.Length];
+        for (int i = 0; i < arr1.Length; i++)
+        {
+            result[i] = arr1[i];
+        }
+        for (int i = 0; i < arr2.Length; i++)
+        {
+            result[arr1.Length + i] = arr2[i];
+        }
+        return result;
+    }
+}
+
+class Task20
+{
+    public int[] deleteNegative(int[] arr)
+    {
+        int count = 0;
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i] >= 0)
+            {
+                count++;
+            }
+        }
+
+        int[] result = new int[count];
+        int index = 0;
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i] >= 0)
+            {
+                result[index] = arr[i];
+                index++;
+            }
+        }
+        return result;
+    }
+}
