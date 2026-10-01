@@ -10,7 +10,7 @@ class Lab1
         char letter;
         int first;
         int second;
-        Task5 task5;
+        Tasks tasks = new Tasks();
         int result;
         int i;
         int next;
@@ -75,7 +75,7 @@ class Lab1
                             int.MaxValue);
                         Console.Write("Сумма последних цифр: ");
                         Console.WriteLine(
-                            new Task1().sumLastNums(number));
+                            tasks.sumLastNums(number));
                         break;
                     }
                 case 2:
@@ -83,7 +83,7 @@ class Lab1
                         number = ReadInt("Введите число: ");
                         Console.Write("Положительное: ");
                         Console.WriteLine(
-                            new Task2().isPositive(number));
+                            tasks.isPositive(number));
                         break;
                     }
                 case 3:
@@ -93,7 +93,7 @@ class Lab1
                         Console.Write(
                             "Большая латинская буква: ");
                         Console.WriteLine(
-                            new Task3().isUpperCase(letter));
+                            tasks.isUpperCase(letter));
                         break;
                     }
                 case 4:
@@ -105,14 +105,13 @@ class Lab1
                         Console.Write(
                             "Одно число делит другое: ");
                         Console.WriteLine(
-                            new Task4().isDivisor(
+                            tasks.isDivisor(
                                 first,
                                 second));
                         break;
                     }
                 case 5:
                     {
-                        task5 = new Task5();
                         result = ReadInt(
                             "Число 1: ",
                             0,
@@ -123,7 +122,7 @@ class Lab1
                                 $"Число {i}: ",
                                 0,
                                 int.MaxValue);
-                            result = task5.lastNumSum(
+                            result = tasks.lastNumSum(
                                 result,
                                 next);
                             Console.Write(
@@ -140,7 +139,7 @@ class Lab1
                             "Введите делитель: ");
                         Console.Write("Результат: ");
                         Console.WriteLine(
-                            new Task6().safeDiv(first, second));
+                            tasks.safeDiv(first, second));
                         break;
                     }
                 case 7:
@@ -150,7 +149,7 @@ class Lab1
                         second = ReadInt(
                             "Введите второе число: ");
                         Console.WriteLine(
-                            new Task7().makeDecision(
+                            tasks.makeDecision(
                                 first,
                                 second));
                         break;
@@ -165,7 +164,7 @@ class Lab1
                             "Введите третье число: ");
                         Console.Write("Результат: ");
                         Console.WriteLine(
-                            new Task8().sum3(
+                            tasks.sum3(
                                 first,
                                 second,
                                 third));
@@ -178,7 +177,7 @@ class Lab1
                             0,
                             int.MaxValue);
                         Console.WriteLine(
-                            new Task9().age(years));
+                            tasks.age(years));
                         break;
                     }
                 case 10:
@@ -189,7 +188,7 @@ class Lab1
                         {
                             dayName = "";
                         }
-                        new Task10().printDays(dayName);
+                        tasks.printDays(dayName);
                         break;
                     }
                 case 11:
@@ -199,7 +198,7 @@ class Lab1
                             0,
                             1000);
                         Console.WriteLine(
-                            new Task11().reverseListNums(
+                            tasks.reverseListNums(
                                 number));
                         break;
                     }
@@ -213,7 +212,7 @@ class Lab1
                             100);
                         Console.Write("Результат: ");
                         Console.WriteLine(
-                            new Task12().pow(basis, exponent));
+                            tasks.pow(basis, exponent));
                         break;
                     }
                 case 13:
@@ -222,7 +221,7 @@ class Lab1
                             "Введите целое число: ");
                         Console.Write("Все цифры одинаковые: ");
                         Console.WriteLine(
-                            new Task13().equalNum(number));
+                            tasks.equalNum(number));
                         break;
                     }
                 case 14:
@@ -231,12 +230,12 @@ class Lab1
                             "Введите высоту от 0 до 100: ",
                             0,
                             100);
-                        new Task14().leftTriangle(height);
+                        tasks.leftTriangle(height);
                         break;
                     }
                 case 15:
                     {
-                        new Task15().guessGame();
+                        tasks.guessGame();
                         break;
                     }
                 case 16:
@@ -245,7 +244,7 @@ class Lab1
                         value = ReadInt("Что найти: ");
                         Console.Write("Последний индекс: ");
                         Console.WriteLine(
-                            new Task16().findLast(
+                            tasks.findLast(
                                 numbers,
                                 value));
                         break;
@@ -260,7 +259,7 @@ class Lab1
                             0,
                             numbers.Length);
                         PrintArray(
-                            new Task17().add(
+                            tasks.add(
                                 numbers,
                                 item,
                                 position));
@@ -269,7 +268,7 @@ class Lab1
                 case 18:
                     {
                         numbers = ReadArray();
-                        new Task18().reverse(numbers);
+                        tasks.reverse(numbers);
                         PrintArray(numbers);
                         break;
                     }
@@ -280,7 +279,7 @@ class Lab1
                             "Введите второй массив.");
                         secondArray = ReadArray();
                         PrintArray(
-                            new Task19().concat(
+                            tasks.concat(
                                 numbers,
                                 secondArray));
                         break;
@@ -289,7 +288,7 @@ class Lab1
                     {
                         numbers = ReadArray();
                         PrintArray(
-                            new Task20().deleteNegative(
+                            tasks.deleteNegative(
                                 numbers));
                         break;
                     }

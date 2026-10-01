@@ -1,29 +1,20 @@
-class Task1
+class Tasks
 {
     public int sumLastNums(int x)
     {
         return x % 10 + x / 10 % 10;
     }
-}
 
-class Task2
-{
     public bool isPositive(int x)
     {
         return x > 0;
     }
-}
 
-class Task3
-{
     public bool isUpperCase(char x)
     {
         return x >= 'A' && x <= 'Z';
     }
-}
 
-class Task4
-{
     public bool isDivisor(int a, int b)
     {
         if (a != 0 && b % a == 0)
@@ -36,18 +27,12 @@ class Task4
         }
         return false;
     }
-}
 
-class Task5
-{
     public int lastNumSum(int a, int b)
     {
         return a % 10 + b % 10;
     }
-}
 
-class Task6
-{
     public double safeDiv(int x, int y)
     {
         if (y == 0)
@@ -56,10 +41,7 @@ class Task6
         }
         return (double)x / y;
     }
-}
 
-class Task7
-{
     public string makeDecision(int x, int y)
     {
         if (x < y)
@@ -72,18 +54,12 @@ class Task7
         }
         return $"{x} == {y}";
     }
-}
 
-class Task8
-{
     public bool sum3(int x, int y, int z)
     {
         return x + y == z || x + z == y || y + z == x;
     }
-}
 
-class Task9
-{
     public string age(int x)
     {
         int lastTwo = x % 100;
@@ -103,10 +79,7 @@ class Task9
         }
         return $"{x} лет";
     }
-}
 
-class Task10
-{
     public void printDays(string x)
     {
         int firstDay;
@@ -167,10 +140,7 @@ class Task10
             }
         }
     }
-}
 
-class Task11
-{
     public string reverseListNums(int x)
     {
         string result = "";
@@ -185,10 +155,7 @@ class Task11
         }
         return result;
     }
-}
 
-class Task12
-{
     public int pow(int x, int y)
     {
         int result = 1;
@@ -199,10 +166,7 @@ class Task12
         }
         return result;
     }
-}
 
-class Task13
-{
     public bool equalNum(int x)
     {
         int lastDigit = x % 10;
@@ -216,10 +180,7 @@ class Task13
         }
         return true;
     }
-}
 
-class Task14
-{
     public void leftTriangle(int x)
     {
         int row;
@@ -233,10 +194,7 @@ class Task14
             Console.WriteLine();
         }
     }
-}
 
-class Task15
-{
     public void guessGame()
     {
         Random random = new Random();
@@ -267,10 +225,7 @@ class Task15
             Console.WriteLine("Вы не угадали.");
         }
     }
-}
 
-class Task16
-{
     public int findLast(int[] arr, int x)
     {
         int i;
@@ -283,10 +238,7 @@ class Task16
         }
         return -1;
     }
-}
 
-class Task17
-{
     public int[] add(int[] arr, int x, int pos)
     {
         int[] result = new int[arr.Length + 1];
@@ -302,10 +254,7 @@ class Task17
         }
         return result;
     }
-}
 
-class Task18
-{
     public void reverse(int[] arr)
     {
         int i;
@@ -319,10 +268,7 @@ class Task18
             arr[other] = temp;
         }
     }
-}
 
-class Task19
-{
     public int[] concat(int[] arr1, int[] arr2)
     {
         int[] result = new int[arr1.Length + arr2.Length];
@@ -337,10 +283,7 @@ class Task19
         }
         return result;
     }
-}
 
-class Task20
-{
     public int[] deleteNegative(int[] arr)
     {
         int count = 0;
