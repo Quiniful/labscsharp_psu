@@ -82,7 +82,7 @@ class Tasks
 
     public void printDays(string x)
     {
-        int firstDay;
+        int firstDay = 0;
         switch (x)
         {
             case "понедельник":
@@ -111,7 +111,7 @@ class Tasks
                 return;
         }
 
-        int i;
+        int i = 0;
         for (i = firstDay; i <= 7; i++)
         {
             switch (i)
@@ -144,7 +144,7 @@ class Tasks
     public string reverseListNums(int x)
     {
         string result = "";
-        int i;
+        int i = 0;
         for (i = x; i >= 0; i--)
         {
             if (i < x)
@@ -159,7 +159,7 @@ class Tasks
     public int pow(int x, int y)
     {
         int result = 1;
-        int i;
+        int i = 0;
         for (i = 0; i < y; i++)
         {
             result *= x;
@@ -183,8 +183,8 @@ class Tasks
 
     public void leftTriangle(int x)
     {
-        int row;
-        int column;
+        int row = 0;
+        int column = 0;
         for (row = 1; row <= x; row++)
         {
             for (column = 1; column <= row; column++)
@@ -200,8 +200,8 @@ class Tasks
         Random random = new Random();
         int hidden = random.Next(0, 10);
         int attempts = 0;
-        string input;
-        int answer;
+        string input = "";
+        int answer = 0;
 
         while (true)
         {
@@ -228,7 +228,7 @@ class Tasks
 
     public int findLast(int[] arr, int x)
     {
-        int i;
+        int i = 0;
         for (i = arr.Length - 1; i >= 0; i--)
         {
             if (arr[i] == x)
@@ -242,7 +242,7 @@ class Tasks
     public int[] add(int[] arr, int x, int pos)
     {
         int[] result = new int[arr.Length + 1];
-        int i;
+        int i = 0;
         for (i = 0; i < pos; i++)
         {
             result[i] = arr[i];
@@ -257,9 +257,9 @@ class Tasks
 
     public void reverse(int[] arr)
     {
-        int i;
-        int other;
-        int temp;
+        int i = 0;
+        int other = 0;
+        int temp = 0;
         for (i = 0; i < arr.Length / 2; i++)
         {
             other = arr.Length - 1 - i;
@@ -272,7 +272,7 @@ class Tasks
     public int[] concat(int[] arr1, int[] arr2)
     {
         int[] result = new int[arr1.Length + arr2.Length];
-        int i;
+        int i = 0;
         for (i = 0; i < arr1.Length; i++)
         {
             result[i] = arr1[i];
@@ -287,7 +287,7 @@ class Tasks
     public int[] deleteNegative(int[] arr)
     {
         int count = 0;
-        int i;
+        int i = 0;
         for (i = 0; i < arr.Length; i++)
         {
             if (arr[i] >= 0)

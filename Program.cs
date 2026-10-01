@@ -5,26 +5,26 @@ class Lab1
 {
     public void Run()
     {
-        int task;
-        int number;
-        char letter;
-        int first;
-        int second;
+        int task = 0;
+        int number = 0;
+        char letter = '\0';
+        int first = 0;
+        int second = 0;
         Tasks tasks = new Tasks();
-        int result;
-        int i;
-        int next;
-        int third;
-        int years;
-        string dayName;
-        int basis;
-        int exponent;
-        int height;
-        int[] numbers;
-        int value;
-        int item;
-        int position;
-        int[] secondArray;
+        int result = 0;
+        int i = 0;
+        int next = 0;
+        int third = 0;
+        int years = 0;
+        string dayName = "";
+        int basis = 0;
+        int exponent = 0;
+        int height = 0;
+        int[] numbers = new int[0];
+        int value = 0;
+        int item = 0;
+        int position = 0;
+        int[] secondArray = new int[0];
 
         while (true)
         {
@@ -303,8 +303,8 @@ class Lab1
 
     private int ReadInt(string message, int minimum, int maximum)
     {
-        string input;
-        int number;
+        string input = "";
+        int number = 0;
         while (true)
         {
             Console.Write(message);
@@ -322,7 +322,7 @@ class Lab1
 
     private char ReadChar(string message)
     {
-        string input;
+        string input = "";
         while (true)
         {
             Console.Write(message);
@@ -342,7 +342,7 @@ class Lab1
             0,
             100);
         int[] result = new int[length];
-        int i;
+        int i = 0;
         for (i = 0; i < length; i++)
         {
             result[i] = ReadInt($"Элемент {i}: ");
@@ -352,7 +352,7 @@ class Lab1
 
     private void PrintArray(int[] arr)
     {
-        int i;
+        int i = 0;
         Console.Write("[");
         for (i = 0; i < arr.Length; i++)
         {
