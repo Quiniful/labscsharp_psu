@@ -2,7 +2,17 @@ class Tasks
 {
     public int sumLastNums(int x)
     {
-        return x % 10 + x / 10 % 10;
+        int last = x % 10;
+        int previous = x / 10 % 10;
+        if (last < 0)
+        {
+            last = -last;
+        }
+        if (previous < 0)
+        {
+            previous = -previous;
+        }
+        return last + previous;
     }
 
     public bool isPositive(int x)
@@ -17,11 +27,11 @@ class Tasks
 
     public bool isDivisor(int a, int b)
     {
-        if (a != 0 && b % a == 0)
+        if (a != 0 && (long)b % a == 0)
         {
             return true;
         }
-        if (b != 0 && a % b == 0)
+        if (b != 0 && (long)a % b == 0)
         {
             return true;
         }
@@ -30,7 +40,17 @@ class Tasks
 
     public int lastNumSum(int a, int b)
     {
-        return a % 10 + b % 10;
+        int first = a % 10;
+        int second = b % 10;
+        if (first < 0)
+        {
+            first = -first;
+        }
+        if (second < 0)
+        {
+            second = -second;
+        }
+        return first + second;
     }
 
     public double safeDiv(int x, int y)
@@ -57,13 +77,23 @@ class Tasks
 
     public bool sum3(int x, int y, int z)
     {
-        return x + y == z || x + z == y || y + z == x;
+        return (long)x + y == z
+            || (long)x + z == y
+            || (long)y + z == x;
     }
 
     public string age(int x)
     {
         int lastTwo = x % 100;
         int lastOne = x % 10;
+        if (lastTwo < 0)
+        {
+            lastTwo = -lastTwo;
+        }
+        if (lastOne < 0)
+        {
+            lastOne = -lastOne;
+        }
 
         if (lastTwo >= 11 && lastTwo <= 14)
         {
@@ -145,24 +175,46 @@ class Tasks
     {
         string result = "";
         int i = 0;
-        for (i = x; i >= 0; i--)
+        if (x < 0)
         {
-            if (i < x)
+            for (i = x; i < 0; i++)
             {
-                result += " ";
+                result += i + " ";
             }
-            result += i;
         }
-        return result;
+        else
+        {
+            for (i = x; i > 0; i--)
+            {
+                result += i + " ";
+            }
+        }
+        return result + "0";
     }
 
     public int pow(int x, int y)
     {
         int result = 1;
         int i = 0;
+        if (y == 0 || x == 1)
+        {
+            return 1;
+        }
+        if (x == 0)
+        {
+            return 0;
+        }
+        if (x == -1)
+        {
+            if (y % 2 == 0)
+            {
+                return 1;
+            }
+            return -1;
+        }
         for (i = 0; i < y; i++)
         {
-            result *= x;
+            result = checked(result * x);
         }
         return result;
     }
@@ -185,9 +237,9 @@ class Tasks
     {
         int row = 0;
         int column = 0;
-        for (row = 1; row <= x; row++)
+        for (row = 0; row < x; row++)
         {
-            for (column = 1; column <= row; column++)
+            for (column = 0; column <= row; column++)
             {
                 Console.Write("*");
             }

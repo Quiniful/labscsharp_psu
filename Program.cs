@@ -70,9 +70,12 @@ class Lab1
                 case 1:
                     {
                         number = ReadInt(
-                            "Введите число не меньше 10: ",
-                            10,
-                            int.MaxValue);
+                            "Введите число от двух цифр: ");
+                        while (number > -10 && number < 10)
+                        {
+                            number = ReadInt(
+                                "Нужно минимум две цифры: ");
+                        }
                         Console.Write("Сумма последних цифр: ");
                         Console.WriteLine(
                             tasks.sumLastNums(number));
@@ -112,16 +115,10 @@ class Lab1
                     }
                 case 5:
                     {
-                        result = ReadInt(
-                            "Число 1: ",
-                            0,
-                            int.MaxValue);
+                        result = ReadInt("Число 1: ");
                         for (i = 2; i <= 5; i++)
                         {
-                            next = ReadInt(
-                                $"Число {i}: ",
-                                0,
-                                int.MaxValue);
+                            next = ReadInt($"Число {i}: ");
                             result = tasks.lastNumSum(
                                 result,
                                 next);
@@ -172,10 +169,7 @@ class Lab1
                     }
                 case 9:
                     {
-                        years = ReadInt(
-                            "Введите возраст: ",
-                            0,
-                            int.MaxValue);
+                        years = ReadInt("Введите возраст: ");
                         Console.WriteLine(
                             tasks.age(years));
                         break;
@@ -193,10 +187,7 @@ class Lab1
                     }
                 case 11:
                     {
-                        number = ReadInt(
-                            "Введите число от 0 до 1000: ",
-                            0,
-                            1000);
+                        number = ReadInt("Введите число: ");
                         Console.WriteLine(
                             tasks.reverseListNums(
                                 number));
@@ -207,12 +198,20 @@ class Lab1
                         basis = ReadInt(
                             "Введите основание: ");
                         exponent = ReadInt(
-                            "Введите степень от 0 до 100: ",
+                            "Введите неотрицательную степень: ",
                             0,
-                            100);
-                        Console.Write("Результат: ");
-                        Console.WriteLine(
-                            tasks.pow(basis, exponent));
+                            int.MaxValue);
+                        try
+                        {
+                            result = tasks.pow(basis, exponent);
+                            Console.WriteLine(
+                                $"Результат: {result}");
+                        }
+                        catch (OverflowException)
+                        {
+                            Console.WriteLine(
+                                "Число не помещается в int.");
+                        }
                         break;
                     }
                 case 13:
@@ -226,10 +225,7 @@ class Lab1
                     }
                 case 14:
                     {
-                        height = ReadInt(
-                            "Введите высоту от 0 до 100: ",
-                            0,
-                            100);
+                        height = ReadInt("Введите высоту: ");
                         tasks.leftTriangle(height);
                         break;
                     }
@@ -338,9 +334,9 @@ class Lab1
     private int[] ReadArray()
     {
         int length = ReadInt(
-            "Сколько элементов в массиве (от 0 до 100): ",
+            "Сколько элементов в массиве: ",
             0,
-            100);
+            int.MaxValue);
         int[] result = new int[length];
         int i = 0;
         for (i = 0; i < length; i++)
