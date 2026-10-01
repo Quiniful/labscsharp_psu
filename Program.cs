@@ -5,6 +5,27 @@ class Lab1
 {
     public void Run()
     {
+        int task;
+        int number;
+        char letter;
+        int first;
+        int second;
+        Task5 task5;
+        int result;
+        int i;
+        int next;
+        int third;
+        int years;
+        string dayName;
+        int basis;
+        int exponent;
+        int height;
+        int[] numbers;
+        int value;
+        int item;
+        int position;
+        int[] secondArray;
+
         while (true)
         {
             Console.WriteLine();
@@ -35,7 +56,7 @@ class Lab1
                 "20 - Удаление отрицательных чисел");
             Console.WriteLine("0 - Выход");
 
-            int task = ReadInt(
+            task = ReadInt(
                 "Выберите задачу от 1 до 20: ",
                 0,
                 20);
@@ -48,7 +69,7 @@ class Lab1
             {
                 case 1:
                     {
-                        int number = ReadInt(
+                        number = ReadInt(
                             "Введите число не меньше 10: ",
                             10,
                             int.MaxValue);
@@ -59,7 +80,7 @@ class Lab1
                     }
                 case 2:
                     {
-                        int number = ReadInt("Введите число: ");
+                        number = ReadInt("Введите число: ");
                         Console.Write("Положительное: ");
                         Console.WriteLine(
                             new Task2().isPositive(number));
@@ -67,7 +88,7 @@ class Lab1
                     }
                 case 3:
                     {
-                        char letter = ReadChar(
+                        letter = ReadChar(
                             "Введите один символ: ");
                         Console.Write(
                             "Большая латинская буква: ");
@@ -77,9 +98,9 @@ class Lab1
                     }
                 case 4:
                     {
-                        int first = ReadInt(
+                        first = ReadInt(
                             "Введите первое число: ");
-                        int second = ReadInt(
+                        second = ReadInt(
                             "Введите второе число: ");
                         Console.Write(
                             "Одно число делит другое: ");
@@ -91,14 +112,14 @@ class Lab1
                     }
                 case 5:
                     {
-                        Task5 task5 = new Task5();
-                        int result = ReadInt(
+                        task5 = new Task5();
+                        result = ReadInt(
                             "Число 1: ",
                             0,
                             int.MaxValue);
-                        for (int i = 2; i <= 5; i++)
+                        for (i = 2; i <= 5; i++)
                         {
-                            int next = ReadInt(
+                            next = ReadInt(
                                 $"Число {i}: ",
                                 0,
                                 int.MaxValue);
@@ -114,8 +135,8 @@ class Lab1
                     }
                 case 6:
                     {
-                        int first = ReadInt("Введите делимое: ");
-                        int second = ReadInt(
+                        first = ReadInt("Введите делимое: ");
+                        second = ReadInt(
                             "Введите делитель: ");
                         Console.Write("Результат: ");
                         Console.WriteLine(
@@ -124,9 +145,9 @@ class Lab1
                     }
                 case 7:
                     {
-                        int first = ReadInt(
+                        first = ReadInt(
                             "Введите первое число: ");
-                        int second = ReadInt(
+                        second = ReadInt(
                             "Введите второе число: ");
                         Console.WriteLine(
                             new Task7().makeDecision(
@@ -136,11 +157,11 @@ class Lab1
                     }
                 case 8:
                     {
-                        int first = ReadInt(
+                        first = ReadInt(
                             "Введите первое число: ");
-                        int second = ReadInt(
+                        second = ReadInt(
                             "Введите второе число: ");
-                        int third = ReadInt(
+                        third = ReadInt(
                             "Введите третье число: ");
                         Console.Write("Результат: ");
                         Console.WriteLine(
@@ -152,7 +173,7 @@ class Lab1
                     }
                 case 9:
                     {
-                        int years = ReadInt(
+                        years = ReadInt(
                             "Введите возраст: ",
                             0,
                             int.MaxValue);
@@ -163,7 +184,7 @@ class Lab1
                 case 10:
                     {
                         Console.Write("Введите день недели: ");
-                        string dayName = Console.ReadLine();
+                        dayName = Console.ReadLine();
                         if (dayName == null)
                         {
                             dayName = "";
@@ -173,7 +194,7 @@ class Lab1
                     }
                 case 11:
                     {
-                        int number = ReadInt(
+                        number = ReadInt(
                             "Введите число от 0 до 1000: ",
                             0,
                             1000);
@@ -184,9 +205,9 @@ class Lab1
                     }
                 case 12:
                     {
-                        int basis = ReadInt(
+                        basis = ReadInt(
                             "Введите основание: ");
-                        int exponent = ReadInt(
+                        exponent = ReadInt(
                             "Введите степень от 0 до 100: ",
                             0,
                             100);
@@ -197,7 +218,7 @@ class Lab1
                     }
                 case 13:
                     {
-                        int number = ReadInt(
+                        number = ReadInt(
                             "Введите целое число: ");
                         Console.Write("Все цифры одинаковые: ");
                         Console.WriteLine(
@@ -206,7 +227,7 @@ class Lab1
                     }
                 case 14:
                     {
-                        int height = ReadInt(
+                        height = ReadInt(
                             "Введите высоту от 0 до 100: ",
                             0,
                             100);
@@ -220,8 +241,8 @@ class Lab1
                     }
                 case 16:
                     {
-                        int[] numbers = ReadArray();
-                        int value = ReadInt("Что найти: ");
+                        numbers = ReadArray();
+                        value = ReadInt("Что найти: ");
                         Console.Write("Последний индекс: ");
                         Console.WriteLine(
                             new Task16().findLast(
@@ -231,10 +252,10 @@ class Lab1
                     }
                 case 17:
                     {
-                        int[] numbers = ReadArray();
-                        int item = ReadInt(
+                        numbers = ReadArray();
+                        item = ReadInt(
                             "Какое число вставить: ");
-                        int position = ReadInt(
+                        position = ReadInt(
                             "В какую позицию: ",
                             0,
                             numbers.Length);
@@ -247,26 +268,26 @@ class Lab1
                     }
                 case 18:
                     {
-                        int[] numbers = ReadArray();
+                        numbers = ReadArray();
                         new Task18().reverse(numbers);
                         PrintArray(numbers);
                         break;
                     }
                 case 19:
                     {
-                        int[] numbers = ReadArray();
+                        numbers = ReadArray();
                         Console.WriteLine(
                             "Введите второй массив.");
-                        int[] second = ReadArray();
+                        secondArray = ReadArray();
                         PrintArray(
                             new Task19().concat(
                                 numbers,
-                                second));
+                                secondArray));
                         break;
                     }
                 case 20:
                     {
-                        int[] numbers = ReadArray();
+                        numbers = ReadArray();
                         PrintArray(
                             new Task20().deleteNegative(
                                 numbers));
@@ -283,11 +304,13 @@ class Lab1
 
     private int ReadInt(string message, int minimum, int maximum)
     {
+        string input;
+        int number;
         while (true)
         {
             Console.Write(message);
-            string input = Console.ReadLine();
-            if (int.TryParse(input, out int number)
+            input = Console.ReadLine();
+            if (int.TryParse(input, out number)
                 && number >= minimum
                 && number <= maximum)
             {
@@ -300,10 +323,11 @@ class Lab1
 
     private char ReadChar(string message)
     {
+        string input;
         while (true)
         {
             Console.Write(message);
-            string input = Console.ReadLine();
+            input = Console.ReadLine();
             if (input != null && input.Length == 1)
             {
                 return input[0];
@@ -319,7 +343,8 @@ class Lab1
             0,
             100);
         int[] result = new int[length];
-        for (int i = 0; i < length; i++)
+        int i;
+        for (i = 0; i < length; i++)
         {
             result[i] = ReadInt($"Элемент {i}: ");
         }
@@ -328,8 +353,9 @@ class Lab1
 
     private void PrintArray(int[] arr)
     {
+        int i;
         Console.Write("[");
-        for (int i = 0; i < arr.Length; i++)
+        for (i = 0; i < arr.Length; i++)
         {
             if (i > 0)
             {

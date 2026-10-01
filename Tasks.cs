@@ -138,7 +138,8 @@ class Task10
                 return;
         }
 
-        for (int i = firstDay; i <= 7; i++)
+        int i;
+        for (i = firstDay; i <= 7; i++)
         {
             switch (i)
             {
@@ -173,7 +174,8 @@ class Task11
     public string reverseListNums(int x)
     {
         string result = "";
-        for (int i = x; i >= 0; i--)
+        int i;
+        for (i = x; i >= 0; i--)
         {
             if (i < x)
             {
@@ -190,7 +192,8 @@ class Task12
     public int pow(int x, int y)
     {
         int result = 1;
-        for (int i = 0; i < y; i++)
+        int i;
+        for (i = 0; i < y; i++)
         {
             result *= x;
         }
@@ -219,9 +222,11 @@ class Task14
 {
     public void leftTriangle(int x)
     {
-        for (int row = 1; row <= x; row++)
+        int row;
+        int column;
+        for (row = 1; row <= x; row++)
         {
-            for (int column = 1; column <= row; column++)
+            for (column = 1; column <= row; column++)
             {
                 Console.Write("*");
             }
@@ -237,12 +242,14 @@ class Task15
         Random random = new Random();
         int hidden = random.Next(0, 10);
         int attempts = 0;
+        string input;
+        int answer;
 
         while (true)
         {
             Console.Write("Введите число от 0 до 9: ");
-            string input = Console.ReadLine();
-            if (!int.TryParse(input, out int answer)
+            input = Console.ReadLine();
+            if (!int.TryParse(input, out answer)
                 || answer < 0 || answer > 9)
             {
                 Console.WriteLine(
@@ -266,7 +273,8 @@ class Task16
 {
     public int findLast(int[] arr, int x)
     {
-        for (int i = arr.Length - 1; i >= 0; i--)
+        int i;
+        for (i = arr.Length - 1; i >= 0; i--)
         {
             if (arr[i] == x)
             {
@@ -282,12 +290,13 @@ class Task17
     public int[] add(int[] arr, int x, int pos)
     {
         int[] result = new int[arr.Length + 1];
-        for (int i = 0; i < pos; i++)
+        int i;
+        for (i = 0; i < pos; i++)
         {
             result[i] = arr[i];
         }
         result[pos] = x;
-        for (int i = pos; i < arr.Length; i++)
+        for (i = pos; i < arr.Length; i++)
         {
             result[i + 1] = arr[i];
         }
@@ -299,10 +308,13 @@ class Task18
 {
     public void reverse(int[] arr)
     {
-        for (int i = 0; i < arr.Length / 2; i++)
+        int i;
+        int other;
+        int temp;
+        for (i = 0; i < arr.Length / 2; i++)
         {
-            int other = arr.Length - 1 - i;
-            int temp = arr[i];
+            other = arr.Length - 1 - i;
+            temp = arr[i];
             arr[i] = arr[other];
             arr[other] = temp;
         }
@@ -314,11 +326,12 @@ class Task19
     public int[] concat(int[] arr1, int[] arr2)
     {
         int[] result = new int[arr1.Length + arr2.Length];
-        for (int i = 0; i < arr1.Length; i++)
+        int i;
+        for (i = 0; i < arr1.Length; i++)
         {
             result[i] = arr1[i];
         }
-        for (int i = 0; i < arr2.Length; i++)
+        for (i = 0; i < arr2.Length; i++)
         {
             result[arr1.Length + i] = arr2[i];
         }
@@ -331,7 +344,8 @@ class Task20
     public int[] deleteNegative(int[] arr)
     {
         int count = 0;
-        for (int i = 0; i < arr.Length; i++)
+        int i;
+        for (i = 0; i < arr.Length; i++)
         {
             if (arr[i] >= 0)
             {
@@ -341,7 +355,7 @@ class Task20
 
         int[] result = new int[count];
         int index = 0;
-        for (int i = 0; i < arr.Length; i++)
+        for (i = 0; i < arr.Length; i++)
         {
             if (arr[i] >= 0)
             {
